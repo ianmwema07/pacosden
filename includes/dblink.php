@@ -1,7 +1,10 @@
 <?php
-$connection = new mysqli("localhost","root","root","pacosden");
 
-if($connection->connect_error()){
-    file_put_contents("log.txt","Connection Error".$connection->connect_error());
-    exit();
+$connection = new Mysqli;
+$connection->connect("localhost","root","root","pacosden");
+if($connection){
+    file_put_contents("log.txt","connection successful",FILE_APPEND);
 }
+
+$con = mysqli_connect("localhost","root","root","pacosden");
+

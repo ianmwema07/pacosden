@@ -1,3 +1,14 @@
+<?php
+include("includes/dblink.php");
+$studsql = "SELECT * FROM dogs WHERE GENDER = 'stud'";
+$femalesql = "SELECT * FROM dogs WHERE GENDER = 'female'";
+$puppysql = "SELECT * FROM dogs WHERE GENDER = 'puppy'";
+
+$studrows = $connection->query($studsql);
+$femalerows = $connection->query($femalesql);
+$puppyrows = $connection->query($puppysql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +44,7 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">Pacosden Kennels</a></h1>
+      <h1 class="logo"><a href="index.php">Pacosden Kennels</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -51,7 +62,7 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
+  <section id="hero" class="d-flex align-items-center" style="height: 37rem">
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
       <h1>Pacosden Kennels</h1>
       <h2>We are team of dog keepers who look to make man and dog best friends.</h2>
@@ -69,16 +80,11 @@
           <div class="col-lg-6 order-1 order-lg-2 " data-aos="fade-left">
             <img src="assets/img/kennelimage3.jpg" class="img-fluid" alt="">
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content " data-aos="fade-right">
             <h3>About Us</h3>
             <p class="fst-italic">
-              At Pacosden Kennels we strive to bring up and train the best dog breeds. What we offer:
+                Here at Pacosden kennels, you will find American Bullies with some of the most complete and desirable traits only notable in select bloodlines.Our American Bullies not only possess attractive looks, correct conformation and stable temperaments but muscular and loving personality as well.Our use of quality sires ensures that we produce puppies with consistent and iconic looks. If you are looking for a perfect Pitbull as a companion,you need to locate a reputable breeder and Pacosden Kennels is your answer.We also do dog boarding and grooming,offer stud services and give expert advice on dog breeding."
             </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> Well fed dogs.</li>
-              <li><i class="bi bi-check-circle"></i> Healthy and certified.</li>
-              <li><i class="bi bi-check-circle"></i> Training of puppies.</li>
-            </ul>
           </div>
         </div>
 
@@ -94,74 +100,59 @@
         <div class="section-title">
           <h2>Our Dogs</h2>
         </div>
-
+          <div class="section-title">
+              <h4>Studs</h4>
+          </div>
+          <div class="row our-dogs">
+              <?php while($row = $studrows->fetch_assoc()): ?>
+                  <div class="card" style="width: 18rem;">
+                      <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-top" alt="..." style="height: 16rem;width: 16rem;">
+                      <div class="card-body">
+                          <h5 class="card-title"><?php echo $row['NAME'];?></h5>
+                          <ul style="list-style-type: none;">
+                              <li><?php echo $row['BREED'];?></li>
+                              <li><?php echo $row['AGE_IN_MONTHS'];?> : Months</li>
+                              <li><?php echo $row['GENDER'];?></li>
+                          </ul>
+                      </div>
+                  </div>
+              <?php endwhile; ?>
+          </div>
+          <div class="section-title">
+              <h4>Females</h4>
+          </div>
+          <div class="row our-dogs">
+              <?php while($row = $femalerows->fetch_assoc()): ?>
+                  <div class="card" style="width: 18rem;">
+                      <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-top" alt="..." style="height: 16rem;width: 16rem;">
+                      <div class="card-body">
+                          <h5 class="card-title"><?php echo $row['NAME'];?></h5>
+                          <ul style="list-style-type: none;">
+                              <li><?php echo $row['BREED'];?></li>
+                              <li><?php echo $row['AGE_IN_MONTHS'];?> : Months</li>
+                              <li><?php echo $row['GENDER'];?></li>
+                          </ul>
+                      </div>
+                  </div>
+              <?php endwhile; ?>
+          </div>
+          <div class="section-title">
+              <h4>Puppies</h4>
+          </div>
         <div class="row our-dogs">
-          <div class="card" style="width: 18rem;">
-            <img src="assets/img/kennelimage1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Tommy</h5>
-              <ul>
-                <li>Pitbull</li>
-                <li>6 - 18 months</li>
-                <li>Male</li>
-              </ul>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="assets/img/kennelimage2.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Tommy</h5>
-              <ul>
-                <li>Pitbull</li>
-                <li>6 - 18 months</li>
-                <li>Male</li>
-              </ul>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="assets/img/kennelimage3.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Tommy</h5>
-              <ul>
-                <li>Pitbull</li>
-                <li>6 - 18 months</li>
-                <li>Male</li>
-              </ul>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="assets/img/kennelimage4.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Tommy</h5>
-              <ul>
-                <li>Pitbull</li>
-                <li>6 - 18 months</li>
-                <li>Male</li>
-              </ul>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="assets/img/kennelimage5.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Tommy</h5>
-              <ul>
-                <li>Pitbull</li>
-                <li>6 - 18 months</li>
-                <li>Male</li>
-              </ul>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="assets/img/kennelimage3.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Tommy</h5>
-              <ul>
-                <li>Pitbull</li>
-                <li>6 - 18 months</li>
-                <li>Male</li>
-              </ul>
-            </div>
-          </div>
+            <?php while($row = $puppyrows->fetch_assoc()): ?>
+                <div class="card" style="width: 18rem;">
+                    <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-top" alt="..." style="height: 16rem;width: 16rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $row['NAME'];?></h5>
+                        <ul style="list-style-type: none;">
+                            <li><?php echo $row['BREED'];?></li>
+                            <li><?php echo $row['AGE_IN_MONTHS'];?> : Months</li>
+                            <li><?php echo $row['GENDER'];?></li>
+                        </ul>
+                    </div>
+                </div>
+            <?php endwhile; ?>
         </div>
 
       </div>
@@ -188,7 +179,7 @@
             <div class="info-box  mb-4">
               <i class="bx bx-envelope"></i>
               <h3>Email Us</h3>
-              <p>contact@example.com</p>
+                <a href="mailto: gakariaj@yahoo.com"><p>gakariaj@yahoo.com</p></a>
             </div>
           </div>
 
@@ -196,7 +187,7 @@
             <div class="info-box  mb-4">
               <i class="bx bx-phone-call"></i>
               <h3>Call Us</h3>
-              <p>+254701234567</p>
+                <a href="tel:+254722868784"><p>+254722868784</p></a>
             </div>
           </div>
 
@@ -204,40 +195,20 @@
 
         <div class="row" data-aos="fade-up">
 
-          <div class="col-lg-6 ">
+          <div class="col-lg-12 ">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.2097314623668!2d36.71976682915564!3d-1.2695469999421267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xed5f1ce9d6368aa3!2zMcKwMTYnMTAuNCJTIDM2wrA0MycxMy4xIkU!5e0!3m2!1sen!2ske!4v1648468522814!5m2!1sen!2ske" width="100%" height="384px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
 
-          <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
 
         </div>
 
       </div>
     </section><!-- End Contact Section -->
-
+    <section id="socials" class="socials">
+        <div class="container">
+            <div></div>
+        </div>
+    </section>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
