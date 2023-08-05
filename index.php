@@ -4,6 +4,23 @@ $studsql = "SELECT * FROM dogs WHERE GENDER = 'stud'";
 $femalesql = "SELECT * FROM dogs WHERE GENDER = 'female'";
 $puppysql = "SELECT * FROM dogs WHERE GENDER = 'puppy'";
 
+$femaleTotalSql = "SELECT COUNT(*) AS TOTAL FROM `dogs` WHERE GENDER = 'FEMALE'";
+$result = mysqli_query($con,$femaleTotalSql);
+$totalrow = mysqli_fetch_assoc($result);
+$totalFemales = $totalrow['TOTAL'];
+
+
+$studTotalSql = "SELECT COUNT(*) AS TOTAL FROM `dogs` WHERE GENDER = 'STUD'";
+$studresult = mysqli_query($con,$studTotalSql);
+$studtotalrow = mysqli_fetch_assoc($studresult);
+$totalStuds = $studtotalrow['TOTAL'];
+
+$puppyTotalSql = "SELECT COUNT(*) AS TOTAL FROM `dogs` WHERE GENDER = 'PUPPY'";
+$puppyresult = mysqli_query($con,$puppyTotalSql);
+$puppytotalrow = mysqli_fetch_assoc($puppyresult);
+$totalPuppies = $puppytotalrow['TOTAL'];
+
+
 $studrows = $connection->query($studsql);
 $femalerows = $connection->query($femalesql);
 $puppyrows = $connection->query($puppysql);
@@ -23,7 +40,7 @@ $puppyrows = $connection->query($puppysql);
   <!-- Favicons -->
   <link href="assets/img/paw.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -51,7 +68,7 @@ $puppyrows = $connection->query($puppysql);
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#about">About Us</a></li>
           <li><a class="nav-link scrollto" href="#services">Our Dogs</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
@@ -72,52 +89,58 @@ $puppyrows = $connection->query($puppysql);
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    
+    <section id="about" class="services">
       <div class="container">
-
+        <div class="section-title">
+          <h2>About Us</h2>
+        </div>
         <div class="row">
-          <div class="col-lg-6 order-1 order-lg-2 " data-aos="fade-left">
-            <img src="assets/img/kennelimage3.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content " data-aos="fade-right">
-            <h3>About Us</h3>
-            <p class="fst-italic">
+        <div class="col-lg-6  pt-4 pt-lg-0 order-2 order-lg-1 content " data-aos="fade-right">
+            <p class="" style="margin-right: 20px;margin-bottom: 20px">
                 Here at Pacosden kennels, you will find American Bullies with some of the most complete and desirable traits only notable in select bloodlines.Our American Bullies not only possess attractive looks, correct conformation and stable temperaments but muscular and loving personality as well.Our use of quality sires ensures that we produce puppies with consistent and iconic looks. If you are looking for a perfect Pitbull as a companion,you need to locate a reputable breeder and Pacosden Kennels is your answer.We also do dog boarding and grooming,offer stud services and give expert advice on dog breeding."
             </p>
           </div>
-        </div>
-
+        <div class="col-lg-6 order-1 order-lg-2 " data-aos="fade-left">
+            <img src="assets/img/kennelimage3.jpg" class="img-fluid" alt="">
+          </div>
+          </div>
       </div>
-    </section><!-- End About Section -->
-
+    </section><!-- End Services Section -->
 
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
+
       <div class="container">
 
         <div class="section-title">
           <h2>Our Dogs</h2>
         </div>
-          <div class="section-title">
-              <h4>Studs</h4>
+        <?php if($totalStuds > 0){ ?>
+          <div>
+            <div class="section-title">
+                <h4>Studs</h4>
+            </div>
+            <div class="row our-dogs">
+                <?php while($row = $studrows->fetch_assoc()): ?>
+                    <div class="card" style="width: 18rem;">
+                        <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-top" alt="..." style="height: 16rem;width: 16rem;">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $row['NAME'];?></h5>
+                            <ul style="list-style-type: none;">
+                                <li><?php echo $row['BREED'];?></li>
+                                <li><?php echo $row['AGE_IN_MONTHS'];?> : Months</li>
+                                <li><?php echo $row['GENDER'];?></li>
+                            </ul>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
+            </div>
           </div>
-          <div class="row our-dogs">
-              <?php while($row = $studrows->fetch_assoc()): ?>
-                  <div class="card" style="width: 18rem;">
-                      <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-top" alt="..." style="height: 16rem;width: 16rem;">
-                      <div class="card-body">
-                          <h5 class="card-title"><?php echo $row['NAME'];?></h5>
-                          <ul style="list-style-type: none;">
-                              <li><?php echo $row['BREED'];?></li>
-                              <li><?php echo $row['AGE_IN_MONTHS'];?> : Months</li>
-                              <li><?php echo $row['GENDER'];?></li>
-                          </ul>
-                      </div>
-                  </div>
-              <?php endwhile; ?>
-          </div>
+        <?php } ?>
+        
+        <?php if($totalFemales > 0){ ?> 
           <div class="section-title">
               <h4>Females</h4>
           </div>
@@ -136,27 +159,31 @@ $puppyrows = $connection->query($puppysql);
                   </div>
               <?php endwhile; ?>
           </div>
+        <?php } ?>    
+        <?php if($totalPuppies > 0){ ?>      
           <div class="section-title">
               <h4>Puppies</h4>
           </div>
-        <div class="row our-dogs">
-            <?php while($row = $puppyrows->fetch_assoc()): ?>
-                <div class="card" style="width: 18rem;">
-                    <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-top" alt="..." style="height: 16rem;width: 16rem;">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $row['NAME'];?></h5>
-                        <ul style="list-style-type: none;">
-                            <li><?php echo $row['BREED'];?></li>
-                            <li><?php echo $row['AGE_IN_MONTHS'];?> : Months</li>
-                            <li><?php echo $row['GENDER'];?></li>
-                        </ul>
-                    </div>
-                </div>
-            <?php endwhile; ?>
-        </div>
-
+          <div class="row our-dogs">
+              <?php while($row = $puppyrows->fetch_assoc()): ?>
+                  <div class="card" style="width: 18rem;">
+                      <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-top" alt="..." style="height: 16rem;width: 16rem;">
+                      <div class="card-body">
+                          <h5 class="card-title"><?php echo $row['NAME'];?></h5>
+                          <ul style="list-style-type: none;">
+                              <li><?php echo $row['BREED'];?></li>
+                              <li><?php echo $row['AGE_IN_MONTHS'];?> : Months</li>
+                              <li><?php echo $row['GENDER'];?></li>
+                          </ul>
+                      </div>
+                  </div>
+              <?php endwhile; ?>
+          </div>
+        <?php } ?>  
       </div>
     </section><!-- End Services Section -->
+
+
  <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container">
@@ -201,12 +228,27 @@ $puppyrows = $connection->query($puppysql);
 
 
         </div>
-
       </div>
     </section><!-- End Contact Section -->
     <section id="socials" class="socials">
         <div class="container">
-            <div></div>
+            <div class="section-title">
+                <h2>Socials</h2>
+            </div>
+            <div class="row m-4 p-2">
+                <div class="social-icon col-lg-3 d-flex align-items-center">
+                    <a href="https://www.facebook.com/PacosdenKennels/"><img data-toggle="tooltip" data-placement="top" title="Facebook" style="width: 3rem;height: 3rem" src="assets/img/iconography/facebook.svg" alt="facebook-logo">Facebook</a>
+                </div>
+                <div class="social-icon col-lg-3 d-flex align-items-center">
+                    <a href="https://website-1807697834397863264130-dogbreeder.business.site/?utm_source=gmb&utm_medium=referral" target="_blank" style="text-align: center;align-items: center;"> <img data-toggle="tooltip" data-placement="top" title="Google Sites" style="width: 3rem;height: 3rem" src="assets/img/iconography/google.svg" alt="facebook-logo"> Google Sites</a>
+                </div>
+                <div class="social-icon col-lg-3 d-flex align-items-center"  >
+                    <a href="https://instagram.com/pacosden?igshid=1rq2rw8n6ink4" target="_blank"> <img data-toggle="tooltip" data-placement="top" title="instagram" style="width: 3rem;height: 3rem" src="assets/img/iconography/instagram.svg" alt="instagram-logo">Instagram</a>
+                </div>
+                <div class="social-icon col-lg-3 d-flex align-items-center">
+                    <a href="https://youtube.com/@pacosdenbullykennels" target="_blank" class="btn-get-started d-flex align-items-center"><img  data-toggle="tooltip" data-placement="top" title="Youtube" style="width: 3rem;height: 3rem; color: red" src="assets/img/iconography/youtube.svg" alt="youtube-logo">Youtube</a>
+                </div>
+            </div>
         </div>
     </section>
   </main><!-- End #main -->

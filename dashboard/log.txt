@@ -1,1 +1,17 @@
-connection successful3605connection successful3605connection successfulconnection successful3605
+connection successfulArray
+(
+    [Name] => asdfasd
+    [Breed] => asdfasd
+    [Age] => 12
+    [Gender] => stud
+    [submit] => submit
+)
+connection successful3605connection successfulconnection successfulconnection successful3605connection successful3605connection successfulArray
+(
+    [Name] => test
+    [Breed] => adfasd
+    [Age] => 12
+    [Gender] => puppy
+    [submit] => submit
+)
+connection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successful3605connection successful3605connection successful3605

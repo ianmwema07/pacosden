@@ -47,7 +47,7 @@ $rows = $connection->query($sql);
                             </div>
                             <div class="form-group">
                                 <label for="name">Age</label>
-                                <input type="text" name="Age" placeholder="Age in months" class="form-control" id="age" aria-describedby="age"  required>
+                                <input type="number" name="Age" placeholder="Age in months" class="form-control" id="age" aria-describedby="age"  required>
                             </div>
                             <div class="form-group">
                                 <label for="name">Upload Image</label>

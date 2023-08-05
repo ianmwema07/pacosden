@@ -1,12 +1,13 @@
 <?php
 include('../includes/dblink.php');
 if(isset($_POST['submit'])){
-    var_dump($_POST);
+    file_put_contents('log.txt',print_r($_POST,true),FILE_APPEND);
     $name = $_POST['Name'];
     $breed = $_POST['Breed'];
     $age = $_POST['Age'];
     $gender = $_POST['Gender'];
 
+  
 
     $file = $_FILES['image'];
     $fileName = $_FILES['image']['name'];
