@@ -1,0 +1,44 @@
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+.pacosden-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-page-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pacosden-logo img {
+    display: block;
+    width: 400px;
+    height: auto;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .image-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .image-container {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .image-container {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}

@@ -54,6 +54,7 @@ $puppyrows = $connection->query($puppysql);
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/customStyle.css">
 </head>
 
 <body>
@@ -79,8 +80,11 @@ $puppyrows = $connection->query($puppysql);
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center" style="height: 37rem">
-    <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+  <section id="hero" class="d-flex align-items-center align-content-center" style="height: 37rem">
+    <div class="container position-relative align-content-center" data-aos="fade-up" data-aos-delay="500">
+        <div class="pacosden-logo">
+            <img src="assets/img/pacosdenLogo.png" class="img-fluid pacosden-logo-img" alt="">
+        </div>
       <h1>Pacosden Kennels</h1>
       <h2>We are team of dog keepers who look to make man and dog best friends.</h2>
       <a href="#about" class="btn-get-started scrollto">Get Started</a>
@@ -198,7 +202,7 @@ $puppyrows = $connection->query($puppysql);
             <div class="info-box mb-4">
               <i class="bx bx-map"></i>
               <h3>Find Us</h3>
-              <p>Uthiru near ILRI</p>
+              <p><a href="https://www.google.com/maps/place/Pacosden+kennels-Pitbulls+and+Bullys/@-1.269556,36.720306,18z/data=!4m6!3m5!1s0x182f15dc2bbc38c9:0xb3df47935583cc2d!8m2!3d-1.269576!4d36.7202966!16s%2Fg%2F11sx3wwk71?hl=en&entry=ttu" target="_blank">Uthiru near ILRI</a></p>
             </div>
           </div>
 
