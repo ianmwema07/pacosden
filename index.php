@@ -71,6 +71,7 @@ $puppyrows = $connection->query($puppysql);
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About Us</a></li>
           <li><a class="nav-link scrollto" href="#services">Our Dogs</a></li>
+          <li><a class="nav-link scrollto" href="#reviews">Reviews</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -186,7 +187,18 @@ $puppyrows = $connection->query($puppysql);
         <?php } ?>  
       </div>
     </section><!-- End Services Section -->
+<!--      Beginning of the Review section-->
+      <section id="reviews" class="reviews">
+          <div class="container">
 
+              <div class="section-title">
+                  <h2>Reviews</h2>
+              </div>
+              <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+              <div class="elfsight-app-be1e4330-5f67-4df8-8ce7-165e3ef33c18"></div>
+          </div>
+      </section>
+<!--End of the Review Section-->
 
  <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -244,7 +256,7 @@ $puppyrows = $connection->query($puppysql);
                     <a href="https://www.facebook.com/PacosdenKennels/"><img data-toggle="tooltip" data-placement="top" title="Facebook" style="width: 3rem;height: 3rem" src="assets/img/iconography/facebook.svg" alt="facebook-logo">Facebook</a>
                 </div>
                 <div class="social-icon col-lg-3 d-flex align-items-center">
-                    <a href="https://website-1807697834397863264130-dogbreeder.business.site/?utm_source=gmb&utm_medium=referral" target="_blank" style="text-align: center;align-items: center;"> <img data-toggle="tooltip" data-placement="top" title="Google Sites" style="width: 3rem;height: 3rem" src="assets/img/iconography/google.svg" alt="facebook-logo"> Google Sites</a>
+                    <a href="https://website-1807697834397863264130-dogbreeder.business.site/?utm_source=gmb&utm_medium=referral" target="_blank" style="text-align: center;align-items: center;"> <img data-toggle="tooltip" data-placement="top" title="Google Sites" style="width: 3rem;height: 3rem" src="assets/img/iconography/google.svg" alt="facebook-logo"> Revies</a>
                 </div>
                 <div class="social-icon col-lg-3 d-flex align-items-center"  >
                     <a href="https://instagram.com/pacosden?igshid=1rq2rw8n6ink4" target="_blank"> <img data-toggle="tooltip" data-placement="top" title="instagram" style="width: 3rem;height: 3rem" src="assets/img/iconography/instagram.svg" alt="instagram-logo">Instagram</a>
