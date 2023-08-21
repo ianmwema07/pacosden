@@ -14,4 +14,12 @@ connection successful3605connection successfulconnection successfulconnection su
     [Gender] => puppy
     [submit] => submit
 )
-connection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successful3605connection successful3605connection successful3605connection successful3605connection successful3605connection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulRecord deleted successfullyconnection successful3605
+connection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successful3605connection successful3605connection successful3605connection successful3605connection successful3605connection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulRecord deleted successfullyconnection successful3605connection successfulArray
+(
+    [Name] => asdfasd
+    [Breed] => awedfasdf
+    [Age] => 4
+    [Gender] => puppy
+    [submit] => submit
+)
+connection successful3605

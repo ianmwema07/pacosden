@@ -155,8 +155,11 @@ $puppyrows = $connection->query($puppysql);
           <div class="row our-dogs">
               <?php while($row = $femalerows->fetch_assoc()): ?>
                   <div class="card" style="width: 18rem;">
-                      <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-top" alt="..." style="height: auto;width: 16rem;">
+                      <div style="height: 20rem; margin-bottom: 8rem">
+                          <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-top" alt="..." style="height: auto;width: 15rem;">
+                      </div>
                       <div class="card-body">
+                          <hr>
                           <h5 class="card-title"><?php echo $row['NAME'];?></h5>
                           <ul style="list-style-type: none;">
                               <li><?php echo $row['BREED'];?></li>
@@ -175,9 +178,12 @@ $puppyrows = $connection->query($puppysql);
           <div class="row our-dogs">
               <?php while($row = $puppyrows->fetch_assoc()): ?>
                   <div class="card" style="width: 18rem;">
-                      <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-top" alt="..." style="height: auto;width: 16rem;">
+                      <div style="height: 20rem; margin-bottom: 8rem">
+                          <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-top" alt="..." style="height: auto;width: 15rem;">
+                      </div>
                       <div class="card-body">
-                          <h5 class="card-title"><?php echo $row['NAME'];?></h5>
+                          <hr>
+<!--                          <h5 class="card-title">--><?php //echo $row['NAME'];?><!--</h5>-->
                           <ul style="list-style-type: none;">
                               <li><?php echo $row['BREED'];?></li>
                               <li><?php echo $row['AGE_IN_MONTHS'];?> : Months</li>
