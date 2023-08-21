@@ -190,7 +190,6 @@ $puppyrows = $connection->query($puppysql);
 <!--      Beginning of the Review section-->
       <section id="reviews" class="reviews">
           <div class="container">
-
               <div class="section-title">
                   <h2>Reviews</h2>
               </div>
