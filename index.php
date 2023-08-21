@@ -264,7 +264,7 @@ $puppyrows = $connection->query($puppysql);
                     <a href="https://www.facebook.com/PacosdenKennels/"><img data-toggle="tooltip" data-placement="top" title="Facebook" style="width: 3rem;height: 3rem" src="assets/img/iconography/facebook.svg" alt="facebook-logo">Facebook</a>
                 </div>
                 <div class="social-icon col-lg-3 d-flex align-items-center">
-                    <a href="https://website-1807697834397863264130-dogbreeder.business.site/?utm_source=gmb&utm_medium=referral" target="_blank" style="text-align: center;align-items: center;"> <img data-toggle="tooltip" data-placement="top" title="Google Sites" style="width: 3rem;height: 3rem" src="assets/img/iconography/google.svg" alt="facebook-logo"> Revies</a>
+                    <a href="https://website-1807697834397863264130-dogbreeder.business.site/?utm_source=gmb&utm_medium=referral" target="_blank" style="text-align: center;align-items: center;"> <img data-toggle="tooltip" data-placement="top" title="Google Sites" style="width: 3rem;height: 3rem" src="assets/img/iconography/google.svg" alt="facebook-logo"> Reviews</a>
                 </div>
                 <div class="social-icon col-lg-3 d-flex align-items-center"  >
                     <a href="https://instagram.com/pacosden?igshid=1rq2rw8n6ink4" target="_blank"> <img data-toggle="tooltip" data-placement="top" title="instagram" style="width: 3rem;height: 3rem" src="assets/img/iconography/instagram.svg" alt="instagram-logo">Instagram</a>
