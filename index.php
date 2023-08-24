@@ -83,12 +83,10 @@ $puppyrows = $connection->query($puppysql);
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center align-content-center" style="height: 37rem">
     <div class="container position-relative align-content-center" data-aos="fade-up" data-aos-delay="500">
-        <div class="pacosden-logo">
-            <img src="assets/img/pacosdenLogo.png" class="img-fluid pacosden-logo-img" alt="">
+        <div class="pacosden-wording">
+          <h2>American Bully House Kenya.</h2> <br>
         </div>
-      <h1>Pacosden Kennels</h1>
-      <h2>We are team of dog keepers who look to make man and dog best friends.</h2>
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+        <a href="#about" class="btn-get-started scrollto getstarted-button" >Get Started</a>
     </div>
   </section><!-- End Hero -->
 

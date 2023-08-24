@@ -369,13 +369,13 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: calc(100vh - 110px);
-  background: url("../img/kennelimage2.jpg") top center;
+  background: url("../img/new_background.png") top center;
   background-size: cover;
   position: relative;
 }
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0,0.9);
+  background: rgba(0, 0, 0,0.1);
   position: absolute;
   bottom: 0;
   top: 0;

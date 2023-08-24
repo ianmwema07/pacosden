@@ -25,6 +25,17 @@
         max-width: 600px;
         margin: 0 auto;
     }
+    .pacosden-wording {
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        text-justify: auto;
+        margin-top: 2rem;
+    }
+
+    .getstarted-button{
+        margin-left: 500px;
+    }
 }
 
 /* Tablet */
