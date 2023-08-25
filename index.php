@@ -105,7 +105,7 @@ $puppyrows = $connection->query($puppysql);
             </p>
           </div>
         <div class="col-lg-6 order-1 order-lg-2 " data-aos="fade-left">
-            <img src="assets/img/kennelimage3.jpg" class="img-fluid" alt="">
+            <img src="assets/img/about_us.jpeg" class="img-fluid" alt="">
           </div>
           </div>
       </div>
@@ -125,20 +125,14 @@ $puppyrows = $connection->query($puppysql);
             <div class="section-title">
                 <h4>Studs</h4>
             </div>
-            <div class="row our-dogs">
+            <div class="row justify-content-center our-dogs">
                 <?php while($row = $studrows->fetch_assoc()): ?>
-                    <div class="card" style="width: 16rem;">
-                        <div style="height: 20rem; margin-bottom: 8rem">
-                        <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-top" alt="..." style="height: auto;width: 15rem;">
-                        </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-bottom" alt="...">
                         <div class="card-body">
-                            <hr>
                             <h5 class="card-title"><?php echo $row['NAME'];?></h5>
-                            <ul style="list-style-type: none;">
-                                <li><?php echo $row['BREED'];?></li>
-                                <li><?php echo $row['AGE_IN_MONTHS'];?> : Months</li>
-                                <li><?php echo $row['GENDER'];?></li>
-                            </ul>
+                            <p class="card-text"><?php echo $row['BREED'];?> <br> <?php echo $row['AGE_IN_MONTHS'];?>
+                                <br> <?php echo $row['GENDER'];?> </p>
                         </div>
                     </div>
                 <?php endwhile; ?>
@@ -146,52 +140,40 @@ $puppyrows = $connection->query($puppysql);
           </div>
         <?php } ?>
         
-        <?php if($totalFemales > 0){ ?> 
+        <?php if($totalFemales > 0){ ?>
           <div class="section-title">
               <h4>Females</h4>
           </div>
-          <div class="row our-dogs">
+          <div class="row justify-content-center our-dogs">
               <?php while($row = $femalerows->fetch_assoc()): ?>
                   <div class="card" style="width: 18rem;">
-                      <div style="height: 20rem; margin-bottom: 8rem">
-                          <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-top" alt="..." style="height: auto;width: 15rem;">
-                      </div>
+                      <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-bottom" alt="...">
                       <div class="card-body">
-                          <hr>
                           <h5 class="card-title"><?php echo $row['NAME'];?></h5>
-                          <ul style="list-style-type: none;">
-                              <li><?php echo $row['BREED'];?></li>
-                              <li><?php echo $row['AGE_IN_MONTHS'];?> : Months</li>
-                              <li><?php echo $row['GENDER'];?></li>
-                          </ul>
+                          <p class="card-text"><?php echo $row['BREED'];?> <br> <?php echo $row['AGE_IN_MONTHS'];?>
+                              <br> <?php echo $row['GENDER'];?> </p>
                       </div>
                   </div>
               <?php endwhile; ?>
           </div>
-        <?php } ?>    
-        <?php if($totalPuppies > 0){ ?>      
+        <?php } ?>
+        <?php if($totalPuppies > 0){ ?>
           <div class="section-title">
               <h4>Puppies</h4>
           </div>
-          <div class="row our-dogs">
+          <div class="row justify-content-center our-dogs">
               <?php while($row = $puppyrows->fetch_assoc()): ?>
                   <div class="card" style="width: 18rem;">
-                      <div style="height: 20rem; margin-bottom: 8rem">
-                          <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-top" alt="..." style="height: auto;width: 15rem;">
-                      </div>
+                      <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-bottom" alt="...">
                       <div class="card-body">
-                          <hr>
-<!--                          <h5 class="card-title">--><?php //echo $row['NAME'];?><!--</h5>-->
-                          <ul style="list-style-type: none;">
-                              <li><?php echo $row['BREED'];?></li>
-                              <li><?php echo $row['AGE_IN_MONTHS'];?> : Months</li>
-                              <li><?php echo $row['GENDER'];?></li>
-                          </ul>
+                          <h5 class="card-title"><?php echo $row['NAME'];?></h5>
+                          <p class="card-text"><?php echo $row['BREED'];?> <br> <?php echo $row['AGE_IN_MONTHS'];?>
+                              <br> <?php echo $row['GENDER'];?> </p>
                       </div>
                   </div>
               <?php endwhile; ?>
           </div>
-        <?php } ?>  
+        <?php } ?>
       </div>
     </section><!-- End Services Section -->
 <!--      Beginning of the Review section-->
