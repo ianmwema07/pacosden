@@ -121,6 +121,21 @@ $puppyrows = $connection->query($puppysql);
         <div class="section-title">
           <h2>Our Dogs</h2>
         </div>
+              <div class="section-title">
+                  <h4>Puppies Available</h4>
+              </div>
+              <div class="row justify-content-center our-dogs">
+                  <?php while($row = $puppyrows->fetch_assoc()): ?>
+                      <div class="card" style="width: 18rem;">
+                          <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-bottom" alt="...">
+                          <div class="card-body">
+<!--                              <h5 class="card-title">--><?php //echo $row['NAME'];?><!--</h5>-->
+                              <p class="card-text"><?php echo $row['BREED'];?>  <br> Age : &nbsp<?php echo $row['AGE_IN_MONTHS'];?>
+<!--                                  <br> --><?php //echo $row['GENDER'];?><!-- </p>-->
+                          </div>
+                      </div>
+                  <?php endwhile; ?>
+              </div>
         <?php if($totalStuds > 0){ ?>
           <div>
             <div class="section-title">
@@ -147,23 +162,6 @@ $puppyrows = $connection->query($puppysql);
           </div>
           <div class="row justify-content-center our-dogs">
               <?php while($row = $femalerows->fetch_assoc()): ?>
-                  <div class="card" style="width: 18rem;">
-                      <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-bottom" alt="...">
-                      <div class="card-body">
-                          <h5 class="card-title"><?php echo $row['NAME'];?></h5>
-                          <p class="card-text"><?php echo $row['BREED'];?> <br> <?php echo $row['AGE_IN_MONTHS'];?>
-                              <br> <?php echo $row['GENDER'];?> </p>
-                      </div>
-                  </div>
-              <?php endwhile; ?>
-          </div>
-        <?php } ?>
-        <?php if($totalPuppies > 0){ ?>
-          <div class="section-title">
-              <h4>Puppies</h4>
-          </div>
-          <div class="row justify-content-center our-dogs">
-              <?php while($row = $puppyrows->fetch_assoc()): ?>
                   <div class="card" style="width: 18rem;">
                       <img src="uploads/<?php echo $row['IMAGE'];?>" class="card-img-bottom" alt="...">
                       <div class="card-body">
