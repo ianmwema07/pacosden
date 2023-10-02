@@ -9,11 +9,9 @@ include("../includes/functions.php");
 $sql = "SELECT * FROM dogs ";
 
 $rows = $connection->query($sql);
+
 ?>
 <!-- Button trigger modal -->
-
-
-
 <link rel="stylesheet" href="../assets/css/style.css">
 <div class="row">
     <div class=" mt-10 justify-content-end ">
@@ -69,7 +67,6 @@ $rows = $connection->query($sql);
         </div>
     </div>
 </div>
-
 <div class="row" style="align-content: center;align-items: center;margin: 30px">
     <center>
         <?php while($row = $rows->fetch_assoc()): ?>
@@ -80,6 +77,7 @@ $rows = $connection->query($sql);
                     <ul style="list-style-type: none">
                         <li>Breed : <?php echo $row['BREED'] ?> </li>
                         <li>Gender : <?php echo $row['GENDER'] ?> </li>
+                        <li>Priority : <?php echo $row['PRIORITY'] ?> </li>
                     </ul>
                 </div>
                 <div class="card-footer">
@@ -108,9 +106,12 @@ $rows = $connection->query($sql);
                                         </div>
                                         <div class="form-group">
                                             <label for="name">Age</label>
-                                            <input type="text" value="<?php echo $row['AGE_IN_MONTHS']; ?>" name="Age" placeholder="Age in months" class="form-control" id="age" aria-describedby="age" required>
+                                            <input type="number" value="<?php echo $row['AGE_IN_MONTHS']; ?>" name="Age" placeholder="Age in months" class="form-control" id="age" aria-describedby="age" required>
                                         </div>
-
+                                        <div class="form-group">
+                                            <label for="name">Priority</label>
+                                            <input type="number" value="<?php echo $row['PRIORITY']; ?>" name="priority" placeholder="Priority" class="form-control" id="priority" aria-describedby="priority" required>
+                                        </div>
                                         <div class="form-group">
                                             <label for="breed">Dog Type</label>
                                             <select name="Gender" class="custom-select" id="validationCustom04" required>

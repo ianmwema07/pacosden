@@ -1,6 +1,8 @@
 <?php
 include ("../includes/header.php");
 include("../includes/dblink.php");
+include("../includes/sharedFunctions.php");
+
 var_dump($_POST);
 session_start();
 if(isset($_POST["submit"])){
@@ -9,6 +11,8 @@ if(isset($_POST["submit"])){
     $breed = $_POST["Breed"];
     $age = $_POST["Age"];
     $gender = $_POST["Gender"];
+
+
 
 
     $updateQuery = "UPDATE dogs SET NAME='$name',BREED = '$breed',AGE_IN_MONTHS = '$age',GENDER = '$gender' WHERE ID = '$id'";
