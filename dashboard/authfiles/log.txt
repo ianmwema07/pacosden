@@ -1,1 +1,57 @@
-HelloHelloHello
+user Passwordadmin1234
+user dataArray
+(
+    [user_id] => 0478765340
+    [user_name] => ian.kariuki
+    [password] => admin1234
+)
+user Passwordadmin1234
+user dataArray
+(
+    [user_id] => 0478765340
+    [user_name] => ian.kariuki
+    [password] => admin1234
+)
+password are correctuser Passwordadmin1234
+user dataArray
+(
+    [user_id] => 0478765340
+    [user_name] => ian.kariuki
+    [password] => admin1234
+)
+user Passwordadmin1234
+user dataArray
+(
+    [user_id] => 0478765340
+    [user_name] => ian.kariuki
+    [password] => admin1234
+)
+user Passwordadmin1234
+user dataArray
+(
+    [user_id] => 0478765340
+    [user_name] => ian.kariuki
+    [password] => admin1234
+)
+user Passwordadmin1234
+user dataArray
+(
+    [user_id] => 0478765340
+    [user_name] => ian.kariuki
+    [password] => admin1234
+)
+user Password
+user PasswordMoha$1994
+user dataArray
+(
+    [user_id] => 78744
+    [user_name] => ian
+    [password] => Butterflies!100
+)
+user Passwordadmin1234
+user dataArray
+(
+    [user_id] => 0478765340
+    [user_name] => ian.kariuki
+    [password] => admin1234
+)
