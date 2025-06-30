@@ -17,14 +17,14 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 
         $result = $connection->query($query);
 
-        file_put_contents("log.txt","This is the query ---->".$query."\n","FILE_APPEND");
+       file_put_contents("log.txt","Hello",FILE_APPEND);
         if ($result) {
 
             if (mysqli_num_rows($result) > 0) {
 
                 $user_data = mysqli_fetch_assoc($result);
 
-                if ($user_data["PASSWORD"] === $password)
+                if ($user_data["password"] === $password)
                 {
                     $_SESSION['user_id'] = $user_data["USER_ID"];
                     header("Location: ../../Dashboard/index.php");
