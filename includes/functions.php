@@ -2,9 +2,10 @@
 
 function check_login($con)
 {
+    file_put_contents("functionlog.txt","Session data :: ".print_r($_SESSION,TRUE),FILE_APPEND);
     if(isset($_SESSION['user_id']))
     {
-        file_put_contents("log.txt",$_SESSION['user_id'],FILE_APPEND);
+        file_put_contents("functionlog.txt",$_SESSION['user_id'],FILE_APPEND);
         $id = $_SESSION['user_id'];
         $query = "SELECT * FROM users WHERE USER_ID = '$id' LIMIT 1";
 

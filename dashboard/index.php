@@ -1,6 +1,5 @@
 <?php
-    session_start();
-    $_SESSION;
+session_start();
 include("../includes/header.php");
 include("../includes/dblink.php");
 include("../includes/functions.php");

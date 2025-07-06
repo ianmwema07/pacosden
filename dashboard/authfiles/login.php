@@ -16,18 +16,19 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         $query = "SELECT * FROM users WHERE user_name = '$user_name'";
 
         $result = $connection->query($query);
-
-       file_put_contents("log.txt","Hello",FILE_APPEND);
         if ($result) {
 
             if (mysqli_num_rows($result) > 0) {
 
                 $user_data = mysqli_fetch_assoc($result);
+                file_put_contents("log.txt","All User Data".print_r($user_data,TRUE),FILE_APPEND);
 
                 if ($user_data["password"] === $password)
                 {
-                    $_SESSION['user_id'] = $user_data["USER_ID"];
-                    header("Location: ../../Dashboard/index.php");
+                    $_SESSION['USER_ID'] = $user_data["user_id"];
+                    $_SESSION['user_id'] = $user_data["user_id"];
+                    file_put_contents("log.txt","Session Data :: ".print_r($_SESSION,TRUE)."\n"."User Data"."\n".print_r($user_data,TRUE),FILE_APPEND);
+                    header("Location: /../pacosden/dashboard/index.php");
                     die;
                 } else
                 {
